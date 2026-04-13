@@ -46,8 +46,12 @@ No cloud servers. No compression. No account creation. Complete privacy.
 ```bash
 git clone https://github.com/Yogesh1290/Local-Share.git
 cd Local-Share
+
+# Install dependencies and start the native networking server
+npm install
+npm run dev:server
 ```
-3. Boot the environment automatically:
+3. Boot the environment automatically (Alternative GUI method):
   * **Windows**: Double-click `start.bat`
   * **Mac/Linux**: Run `./start.sh`
 4. A browser window will automatically open to `http://localhost:8080`.
@@ -80,6 +84,14 @@ LocalShare/
 
 ### Build Lifecycle
 Because `client/` and `server/` operate in tandem, we do not require users to run complex build tasks. The `.bat` / `.sh` scripts automatically call `npx vite build` against the `client` directory. This effortlessly transcompiles the HTML and Javascript, drops them cleanly into `server/public`, and instructs Express to dynamically host them natively.
+
+### Dedicated Development
+If you are developing or simply prefer executing node manually from a remote shell without invoking the startup scripts, deploy using the official node routine:
+
+```bash
+# Start the production server purely via Node
+npm run dev:server
+```
 
 ---
 

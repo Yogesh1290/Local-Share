@@ -31,7 +31,7 @@ echo ""
 
 # ── Step 2: Install server dependencies ───────────────────────────────────
 if [ ! -d "node_modules" ]; then
-  echo "  [*] Installing server dependencies (first time only)..."
+  echo "  [*] Installing server dependencies - first time only..."
   npm install
   echo "  [OK] Done."
   echo ""
@@ -39,7 +39,7 @@ fi
 
 # ── Step 3: Install client dependencies ───────────────────────────────────
 if [ ! -d "client/node_modules" ]; then
-  echo "  [*] Installing client dependencies (first time only)..."
+  echo "  [*] Installing client dependencies - first time only..."
   cd client && npm install && cd ..
   echo "  [OK] Done."
   echo ""
@@ -47,7 +47,7 @@ fi
 
 # ── Step 4: Build the UI ──────────────────────────────────────────────────
 if [ ! -f "server/public/index.html" ]; then
-  echo "  [*] Building UI (first time only)..."
+  echo "  [*] Building UI - first time only, takes ~10 seconds..."
   cd client && npx vite build && cd ..
   echo "  [OK] UI built!"
   echo ""
@@ -59,4 +59,8 @@ echo "   Starting LocalShare... Press Ctrl+C to stop"
 echo "  ============================================"
 echo ""
 
-node server/index.js
+if ! node server/index.js; then
+  echo ""
+  echo "  [ERROR] LocalShare crashed or port 8080 is already in use natively."
+  exit 1
+fi
