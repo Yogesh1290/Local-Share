@@ -44,8 +44,8 @@ No cloud servers. No compression. No account creation. Complete privacy.
 1. Make sure Node.js (v18+) is installed on your computer.
 2. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/localshare.git
-cd localshare
+git clone https://github.com/Yogesh1290/Local-Share.git
+cd Local-Share
 ```
 3. Boot the environment automatically:
   * **Windows**: Double-click `start.bat`
@@ -80,24 +80,6 @@ LocalShare/
 
 ### Build Lifecycle
 Because `client/` and `server/` operate in tandem, we do not require users to run complex build tasks. The `.bat` / `.sh` scripts automatically call `npx vite build` against the `client` directory. This effortlessly transcompiles the HTML and Javascript, drops them cleanly into `server/public`, and instructs Express to dynamically host them natively.
-
----
-
-## 🛠️ Requirements & Development
-
-If you'd like to actively develop LocalShare and see hot-reloading:
-
-```bash
-# 1. Install Dependencies
-npm install
-cd client && npm install
-cd ..
-
-# 2. Run the concurrent dev server
-npm run dev
-```
-
-This boots the live-reloading Vite Server locally on `:5173`, and binds the API tightly back to the Express WebSockets.
 
 ---
 

@@ -4,13 +4,20 @@
   "description": "⚡ Ultra-fast WiFi file sharing — no apps, no cloud, no accounts.",
   "main": "server/index.js",
   "bin": { "localshare": "./server/index.js" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yogesh1290/Local-Share.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yogesh1290/Local-Share/issues"
+  },
+  "homepage": "https://github.com/Yogesh1290/Local-Share#readme",
   "scripts": {
-    "start":        "node server/index.js",
-    "dev:server":   "node server/index.js",
-    "dev:client":   "cd client && npx vite",
-    "dev":          "start \"LocalShare Server\" cmd /k npm run dev:server & start \"LocalShare Client\" cmd /k npm run dev:client",
-    "build":        "cd client && npx vite build",
-    "install:all":  "npm install && cd client && npm install"
+    "start": "node server/index.js",
+    "dev:server": "node server/index.js",
+    "dev:client": "cd client && npx vite",
+    "build": "cd client && npx vite build",
+    "install:all": "npm install && cd client && npm install"
   },
   "dependencies": {
     "cors": "^2.8.5",
