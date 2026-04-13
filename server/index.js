@@ -225,13 +225,6 @@ function handleMessage(fromPeer, data) {
         broadcastPeerList();
       }
       break;
-    case 'signal': {
-      const target = peers.get(data.to);
-      if (target && target.ws.readyState === WebSocket.OPEN) {
-        target.ws.send(JSON.stringify({ type: 'signal', from: fromPeer, signal: data.signal }));
-      }
-      break;
-    }
   }
 }
 

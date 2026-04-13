@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">Ultra-fast, zero-configuration WiFi file sharing across all your devices.</h4>
+<h4 align="center">Simple, zero-configuration WiFi file sharing across all your devices.</h4>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
@@ -24,7 +24,12 @@
 
 LocalShare is a modern, lightweight, browser-based native file sharing tool. It allows you to drag-and-drop any file to any device currently connected to your local WiFi router. It uses a **Node.js** network backend paired with a minimalist, responsive **Vite/Tailwind v4** frontend.
 
-No cloud servers. No compression. No account creation. Complete privacy.
+LocalShare acts as a central hub (server-mediated transfer). The device running the application hosts the files, and other devices on the network interact via standard HTTP uploads and downloads.
+
+No cloud servers. No compression. No account creation. 
+
+> [!WARNING]
+> **No Authentication**: Anyone on your local WiFi network who has the URL or scans the QR code can access and download the files you share. This is perfectly safe for a home or private office network, but use caution on public WiFi (e.g. coffee shops).
 
 ---
 
@@ -33,7 +38,7 @@ No cloud servers. No compression. No account creation. Complete privacy.
 * **Zero Setup**: Simply double-click `start.bat` (Windows) or `start.sh` (Mac/Linux). It automatically downloads its own requirements, builds the UI, and spins up.
 * **Smart Device Detection**: Automatically grabs your computer's real physical IP address (bypassing virtual adapters, Docker masks, or VPNs) so you can directly scan its QR code to connect your phone instantly.
 * **Offline Hosted Files**: Any file sent to the server stays pinned to the **Server Files** directory until explicitly downloaded or permanently deleted by the user. 
-* **Seamless Downloading**: Custom websocket logic triggers native, immediate streaming to bypass restrictive iOS/Android pop-up blockers natively.
+* **Seamless Downloading**: Standard HTTP-based transfers bypassed with native download tags. WebSockets are strictly used for lightweight "file-ready" notifications and real-time device listing, not heavy lifting.
 * **Beautiful Minimal Setup**: Single-page architecture crafted purely with HTML, Vanilla JavaScript, and Tailwind CSS.
 * **Mobile First**: Built tightly so that opening it on your phone feels like a premium native mobile application.
 
