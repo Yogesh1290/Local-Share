@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Inter font */
+@layer base {
+  * { -webkit-font-smoothing: antialiased; }
+  html { font-family: 'Inter', system-ui, sans-serif; }
+}
+
+/* Custom scrollbar */
+@layer utilities {
+  .scrollbar-none { scrollbar-width: none; }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+}
+
+/* Pulse dot animation */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Drag-over glow */
+@keyframes border-glow {
+  0%, 100% { border-color: rgb(63 63 70); }
+  50% { border-color: rgb(161 161 170); }
+}
+.drag-over {
+  animation: border-glow 1s ease-in-out infinite;
+  background: rgb(24 24 27) !important;
+}
+
+/* Slide-in for history items */
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in {
+  animation: slide-in-right 0.25s ease forwards;
+}
+
+/* Fade in for notifications */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.2s ease forwards;
+}
