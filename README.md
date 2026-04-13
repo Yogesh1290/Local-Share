@@ -65,6 +65,19 @@ npm run dev:server
 
 ---
 
+## 🗺️ Roadmap & Future Features
+
+This project is deeply committed to remaining lightweight and bloat-free. However, the following high-impact features are actively planned (or open for PRs!):
+
+- [ ] **PIN/Password Protection**: A simple generated 4-digit PIN on the server terminal to prevent unauthorized LAN snooping.
+- [ ] **Unified Config File (`.env`)**: Allowing power users to easily customize the `8080` port, default `uploads/` path, and storage limits.
+- [ ] **Auto-Cleanup Routines**: Implement chronological garbage collection for abandoned files, with a "Pin/Keep Forever" toggle on the UI.
+- [ ] **Upload Progress Bars**: Visual bytes-transferred chunking for massive files (e.g. 4GB+ Movies) so the UI doesn't feel frozen during transfer.
+
+*(Check out our GitHub Issues if you'd like to contribute any of these!)*
+
+---
+
 ## 🧠 Architecture Overview
 
 To accommodate easy code-contribution, the project is structured as a tightly-coupled monorepo:
